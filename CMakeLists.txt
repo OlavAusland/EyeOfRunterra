@@ -6,16 +6,20 @@ set(GRAPHIC_BACKEND "OpenGL")
 
 add_executable(EyeOfRuneterra main.cpp)
 
+find_package(OpenSSL REQUIRED)
+
 add_subdirectory(vendors)
 add_subdirectory(application)
-
-target_link_options(${CMAKE_PROJECT_NAME} PRIVATE "LINKER:-lstdc++exp")
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
-        ImGUI::ImGUI
-        "-lstdc++exp"
-)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/vendors"
         "${CMAKE_CURRENT_SOURCE_DIR}/application"
+        "${CMAKE_CURRENT_SOURCE_DIR}/vendors/json/single_include"
+)
+
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
+        ImGUI::ImGUI
+        httplib::httplib
+        OpenSSL::SSL
+        OpenSSL::Crypto
 )
