@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include <Texture.hpp>
+#include <Core/Texture.hpp>
 
 class TextureManager
 {

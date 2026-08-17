@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <ostream>
-#include <../Texture.hpp>
+#include <Core/Texture.hpp>
 #include <glad/glad.h>
 #include <stb/stb_image.h>
 

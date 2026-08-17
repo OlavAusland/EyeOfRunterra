@@ -1,9 +1,12 @@
 #include <stdexcept>
 #include <Core/Application.hpp>
 #include <print>
+#include <memory>
 
 #include <backends/imgui_impl_glfw.h>
 #include <backends/imgui_impl_opengl3.h>
+
+#include "Overlay/ChampionCard/ChampionCard.hpp"
 
 namespace Core
 {
@@ -57,7 +60,6 @@ namespace Core
             glClearColor(m_cc.x * m_cc.w, m_cc.y * m_cc.w, m_cc.z * m_cc.w, m_cc.w);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            ImGui::Button("Test Button");
 
             ImGui::Render();
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
